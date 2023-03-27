@@ -1,0 +1,26 @@
+## Git
+alias gita='git add'
+alias gits='git status'
+alias  cdg='cd /d/Github'
+
+## Tmux
+## export TMUX_TMPDIR=~/.tmux/tmp
+alias ntmux='tmux new -s'
+alias atmux='tmux a -t'
+alias rtmux='tmux rename-window'
+
+## Tools
+alias     bc="/d/Program\ Files/Beyond\ Compare\ 4/BCompare.exe"
+alias   tree="/d/Program\ Files/Git/bin/tree.exe"
+alias typora="/d/Program\ Files/Typora/Typora.exe"
+alias evince="/c/Program\ Files\ \(x86\)/Microsoft/Edge/Application/msedge.exe"
+
+## Projects Dir
+alias   study='cd /d/BaiduNetdiskDownload'
+alias     cdp='cd /c/Users/BES/OneDrive/Work@BES/'
+alias   guide='cd /c/Users/BES/OneDrive/000-UserGuide'
+alias set1700='cd /c/Users/BES/OneDrive/Work@BES/BES1700' 
+
+## Alias
+alias   rm="mv --verbose -f --backup=numbered --target-directory /d/.useless/" 
+
