@@ -24,3 +24,5 @@ alias set1700='cd /c/Users/BES/OneDrive/Work@BES/BES1700'
 ## Alias
 alias   rm="mv --verbose -f --backup=numbered --target-directory /d/.useless/" 
 
+set completion-ignore-case on
+
