@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
@@ -67,12 +68,13 @@ export default function BlogPage() {
                 <p className="mt-3 text-base leading-7 text-zinc-600 dark:text-zinc-400">
                   {post.excerpt}
                 </p>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="mt-4 inline-flex text-sm font-medium text-zinc-950 underline-offset-4 hover:underline dark:text-zinc-50"
+                <Button
+                  variant="link"
+                  className="mt-4 h-auto p-0 text-sm font-medium"
+                  asChild
                 >
-                  阅读全文 →
-                </Link>
+                  <Link href={`/blog/${post.slug}`}>阅读全文 →</Link>
+                </Button>
               </article>
             </li>
           ))}
