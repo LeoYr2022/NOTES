@@ -1,8 +1,39 @@
 @import "tailwindcss";
 
+/* Material Design 3–aligned tokens (surface / primary / elevation) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fef7ff;
+  --foreground: #1d1b20;
+
+  --md-primary: #6750a4;
+  --md-on-primary: #ffffff;
+  --md-primary-container: #eaddff;
+  --md-on-primary-container: #21005d;
+
+  --md-secondary-container: #e8def8;
+  --md-on-secondary-container: #1d192b;
+
+  --md-error: #b3261e;
+  --md-on-error: #ffffff;
+  --md-error-container: #f9dedc;
+  --md-on-error-container: #410e0b;
+
+  --md-surface: #fef7ff;
+  --md-on-surface: #1d1b20;
+  --md-on-surface-variant: #49454f;
+
+  --md-surface-container-low: #f7f2fa;
+  --md-surface-container: #f3edf7;
+  --md-surface-container-high: #ece6f0;
+
+  --md-outline: #79747e;
+  --md-outline-variant: #cac4d0;
+
+  --md-shadow-color: rgb(0 0 0 / 0.18);
+  --md-elevation-1: 0 1px 2px var(--md-shadow-color),
+    0 1px 3px 1px rgb(0 0 0 / 0.12);
+  --md-elevation-2: 0 1px 2px rgb(0 0 0 / 0.22),
+    0 2px 6px 2px rgb(0 0 0 / 0.14);
 }
 
 @theme inline {
@@ -10,12 +41,69 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-md-primary: var(--md-primary);
+  --color-md-on-primary: var(--md-on-primary);
+  --color-md-primary-container: var(--md-primary-container);
+  --color-md-on-primary-container: var(--md-on-primary-container);
+
+  --color-md-secondary-container: var(--md-secondary-container);
+  --color-md-on-secondary-container: var(--md-on-secondary-container);
+
+  --color-md-error: var(--md-error);
+  --color-md-on-error: var(--md-on-error);
+  --color-md-error-container: var(--md-error-container);
+  --color-md-on-error-container: var(--md-on-error-container);
+
+  --color-md-surface: var(--md-surface);
+  --color-md-on-surface: var(--md-on-surface);
+  --color-md-on-surface-variant: var(--md-on-surface-variant);
+
+  --color-md-surface-container-low: var(--md-surface-container-low);
+  --color-md-surface-container: var(--md-surface-container);
+  --color-md-surface-container-high: var(--md-surface-container-high);
+
+  --color-md-outline: var(--md-outline);
+  --color-md-outline-variant: var(--md-outline-variant);
+
+  --shadow-md-elevation-1: var(--md-elevation-1);
+  --shadow-md-elevation-2: var(--md-elevation-2);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #141218;
+    --foreground: #e6e1e5;
+
+    --md-primary: #d0bcff;
+    --md-on-primary: #381e72;
+    --md-primary-container: #4f378b;
+    --md-on-primary-container: #eaddff;
+
+    --md-secondary-container: #4a4458;
+    --md-on-secondary-container: #e8def8;
+
+    --md-error: #f2b8b5;
+    --md-on-error: #601410;
+    --md-error-container: #8c1d18;
+    --md-on-error-container: #f9dedc;
+
+    --md-surface: #141218;
+    --md-on-surface: #e6e1e5;
+    --md-on-surface-variant: #cac4d0;
+
+    --md-surface-container-low: #1d1b20;
+    --md-surface-container: #211f26;
+    --md-surface-container-high: #2b2930;
+
+    --md-outline: #948f99;
+    --md-outline-variant: #49454f;
+
+    --md-shadow-color: rgb(0 0 0 / 0.45);
+    --md-elevation-1: 0 1px 2px var(--md-shadow-color),
+      0 1px 3px 1px rgb(0 0 0 / 0.25);
+    --md-elevation-2: 0 1px 2px rgb(0 0 0 / 0.35),
+      0 2px 6px 2px rgb(0 0 0 / 0.28);
   }
 }
 

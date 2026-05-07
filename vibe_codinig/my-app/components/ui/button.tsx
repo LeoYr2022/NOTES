@@ -4,28 +4,29 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
+/** Material Design 3–style buttons: pill shape, state-layer hover, label sizing */
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-zinc-600 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium tracking-wide transition-[color,background-color,box-shadow,filter] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-md-primary focus-visible:ring-offset-2 focus-visible:ring-offset-md-surface disabled:pointer-events-none disabled:opacity-40 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "bg-zinc-900 text-zinc-50 shadow hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200",
+          "bg-md-primary text-md-on-primary shadow-none hover:brightness-110 active:brightness-95 dark:hover:brightness-115",
         destructive:
-          "bg-red-600 text-white shadow-sm hover:bg-red-600/90 dark:bg-red-900 dark:hover:bg-red-900/90",
+          "bg-md-error text-md-on-error shadow-none hover:brightness-110 active:brightness-95",
         outline:
-          "border border-zinc-200 bg-white shadow-sm hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:bg-zinc-800 dark:hover:text-zinc-50",
+          "border border-md-outline bg-transparent text-md-primary hover:bg-md-primary/10 active:bg-md-primary/[0.16]",
         secondary:
-          "bg-zinc-100 text-zinc-900 shadow-sm hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-700",
+          "bg-md-secondary-container text-md-on-secondary-container shadow-none hover:brightness-95 active:brightness-90 dark:hover:brightness-110",
         ghost:
-          "hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-50",
-        link: "text-zinc-950 underline-offset-4 hover:underline dark:text-zinc-50",
+          "bg-transparent text-md-primary hover:bg-md-primary/10 active:bg-md-primary/[0.16]",
+        link: "rounded-none text-md-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md px-3 text-xs",
-        lg: "h-10 rounded-md px-8",
-        icon: "size-9",
+        default: "h-10 px-6 py-2",
+        sm: "h-8 rounded-full px-4 text-xs",
+        lg: "h-12 rounded-full px-8 text-base",
+        icon: "size-10 rounded-full p-0",
       },
     },
     defaultVariants: {

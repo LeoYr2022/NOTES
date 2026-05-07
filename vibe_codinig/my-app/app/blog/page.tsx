@@ -2,6 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { blogPosts } from "@/lib/blog-posts";
 
 export const metadata: Metadata = {
@@ -19,7 +27,7 @@ function formatDate(iso: string) {
 
 export default function BlogPage() {
   return (
-    <div className="flex flex-col flex-1 items-center bg-zinc-50 font-sans dark:bg-black">
+    <div className="flex flex-col flex-1 items-center bg-md-surface font-sans">
       <main className="flex w-full max-w-3xl flex-1 flex-col gap-12 px-6 py-16 sm:px-16 sm:py-24">
         <header className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex flex-col gap-4">
@@ -32,17 +40,17 @@ export default function BlogPage() {
               priority
             />
             <div>
-              <h1 className="text-3xl font-semibold tracking-tight text-black dark:text-zinc-50">
+              <h1 className="text-3xl font-medium tracking-tight text-md-on-surface">
                 博客
               </h1>
-              <p className="mt-2 max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+              <p className="mt-2 max-w-xl text-lg leading-8 text-md-on-surface-variant">
                 用中文记录的 Next.js 笔记：路由、数据流以及各模块如何拼在一起。
               </p>
             </div>
           </div>
           <Link
             href="/"
-            className="shrink-0 text-sm font-medium text-zinc-600 underline-offset-4 hover:text-zinc-950 hover:underline dark:text-zinc-400 dark:hover:text-zinc-50"
+            className="shrink-0 text-sm font-medium text-md-primary underline-offset-4 hover:underline"
           >
             ← 首页
           </Link>
@@ -51,31 +59,37 @@ export default function BlogPage() {
         <ul className="flex flex-col gap-8">
           {blogPosts.map((post) => (
             <li key={post.slug}>
-              <article className="group rounded-2xl border border-zinc-200 bg-white p-6 transition-colors hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-zinc-700 sm:p-8">
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-zinc-500 dark:text-zinc-500">
-                  <time dateTime={post.date}>{formatDate(post.date)}</time>
-                  <span aria-hidden>·</span>
-                  <span>约 {post.readMinutes} 分钟阅读</span>
-                </div>
-                <h2 className="mt-3 text-xl font-semibold tracking-tight text-black group-hover:text-zinc-800 dark:text-zinc-50 dark:group-hover:text-zinc-100">
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="outline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-zinc-400"
+              <Card className="group">
+                <CardHeader className="gap-3 pb-0">
+                  <CardDescription className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <time dateTime={post.date}>{formatDate(post.date)}</time>
+                    <span aria-hidden>·</span>
+                    <span>约 {post.readMinutes} 分钟阅读</span>
+                  </CardDescription>
+                  <CardTitle className="group-hover:text-md-primary">
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="outline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-md-primary"
+                    >
+                      {post.title}
+                    </Link>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-3">
+                  <p className="text-base leading-7 text-md-on-surface-variant">
+                    {post.excerpt}
+                  </p>
+                </CardContent>
+                <CardFooter className="pt-4">
+                  <Button
+                    variant="link"
+                    className="h-auto p-0 text-sm font-medium"
+                    asChild
                   >
-                    {post.title}
-                  </Link>
-                </h2>
-                <p className="mt-3 text-base leading-7 text-zinc-600 dark:text-zinc-400">
-                  {post.excerpt}
-                </p>
-                <Button
-                  variant="link"
-                  className="mt-4 h-auto p-0 text-sm font-medium"
-                  asChild
-                >
-                  <Link href={`/blog/${post.slug}`}>阅读全文 →</Link>
-                </Button>
-              </article>
+                    <Link href={`/blog/${post.slug}`}>阅读全文 →</Link>
+                  </Button>
+                </CardFooter>
+              </Card>
             </li>
           ))}
         </ul>
